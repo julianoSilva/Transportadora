@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Transportadora</title>
+    </h:head>
+    <h:body>
+        <h:outputLabel value="Rastreio de Pacote" />
+        <f:view>
+            <!-- estrutura para buscar os dados de um objeto -->
+            <h:form>
+                <h:outputLabel value="Identificação: "/><h:inputText value="#{statusView.st.order}" />
+                <h:commandButton action="#{statusView.postStatusList()}" value="Buscar" />
+            </h:form>
+        </f:view>
+        <!-- link para adicionar novo estado a um objeto (usado para testar e forçar erros) -->
+        <h:form>
+            <h:commandLink action="#{statusView.postPointToAdd()}" value="Novo Status"/>
+        </h:form>
+    </h:body>
+</html>
+
